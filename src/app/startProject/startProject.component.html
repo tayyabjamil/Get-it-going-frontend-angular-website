@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 style="text-align: center;">Start new Project</h1>
+  <form>
+    <h3>Project Image</h3>
+<!-- <input   [(ngModel)] ='image' type="file" name="image" class="form-control"> -->
+
+    <h3>Title</h3>
+    <input   [(ngModel)] ='title' type="text" name="title" class="form-control">
+    <h3>Type</h3>
+    <input   [(ngModel)] ='type' type="text" name="type" class="form-control">
+    <h3>Estimate Amount</h3>
+    <input   [(ngModel)] ='estimateAmount' type="text" name="estimateAmount" class="form-control">
+    <h3>Description</h3>
+    <input   [(ngModel)] ='description' type="text" name="description" class="form-control">
+    <input type="submit" value="Post" (click)="startProject()">
+  </form>
+</div>
+

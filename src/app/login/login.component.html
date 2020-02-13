@@ -1,0 +1,27 @@
+<div class="container page grid"  id="Login" >
+  <h1 style="text-align: center;">User Account</h1>
+
+    <div class="row"  style="margin-left: 35%;">
+        <ul class="nav navbar-nav" >
+          <li class="nav-item" ><a routerLink="/login">Login Account</a></li>
+          <li class="nav-item"><a routerLink="/createAccount">Create Account</a></li>
+          <li class="nav-item"><a routerLink="/forgetPassword">forget Password</a></li>
+
+        </ul>
+      </div>
+    <form id="loginform" class="row">
+
+        <div class="form-group">
+        <h4>Email</h4>
+        <input [(ngModel)] ="email" type="text" name="email" class="form-control">
+        <h4>Password</h4>
+        <input [(ngModel)] ="password" type="text" name="password" class="form-control">
+        <!-- <h4>Confirm Password</h4>
+        <input [(ngModel)] ="confirmPassword" type="text" name="confirmpassword" class="form-control"> -->
+        <input type="submit" value="Login" (click)="login()">
+
+      </div>
+      </form>
+    </div>
+
+
