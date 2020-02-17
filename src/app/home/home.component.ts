@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { HttpService } from '../http.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,private router: Router) { }
 title = "name";
 projectData ;
   ngOnInit() {
@@ -19,5 +20,10 @@ projectData ;
     this.httpService.getProject().subscribe(data => {
   this.projectData = data;
     })
+}
+projectDetails(){
+
+  this.router.navigate(['projectDetails']);
+
 }
 }

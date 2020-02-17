@@ -1,18 +1,29 @@
 <div class="container">
-  <h1 style="text-align: center;">Start new Project</h1>
+  <h1 style="text-align: center;">Genral Information</h1>
   <form>
+
     <h3>Project Image</h3>
 <!-- <input   [(ngModel)] ='image' type="file" name="image" class="form-control"> -->
 
-    <h3>Title</h3>
+    <h3>Campaign Title</h3>
+    <h4>What is the title of your campaign?</h4>
     <input   [(ngModel)] ='title' type="text" name="title" class="form-control">
-    <h3>Type</h3>
+    <h3>Campaign Tagline</h3>
+    <h4>provide a short description that best describe your campaign  to your audience</h4>
     <input   [(ngModel)] ='type' type="text" name="type" class="form-control">
+    <h3>Vedio Url</h3>
+    <h4>Enter a youtube Url to appear at the top of your campaign page</h4>
+    <input>
+    <h4>campaign main image </h4>
+    <input>
+
     <h3>Estimate Amount</h3>
+    <h4>provide a minimunAmount that you need to start a project</h4>
     <input   [(ngModel)] ='estimateAmount' type="text" name="estimateAmount" class="form-control">
     <h3>Description</h3>
+    <h4>Provide details of your campaign</h4>
     <input   [(ngModel)] ='description' type="text" name="description" class="form-control">
-    <input type="submit" value="Post" (click)="startProject()">
+    <input type="submit" value="Start a Campaign" style="margin: 2%; width: 20%;" class="btn btn-primary" (click)="startProject()">
   </form>
 </div>
 

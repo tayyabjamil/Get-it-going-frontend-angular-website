@@ -1,0 +1,32 @@
+.myrow{
+  height: 600px;
+}
+.search{
+margin-top: 8%;
+margin-left: 8%;
+
+font-style: italic;
+border: none;
+background-color: rgb(255, 255, 255);
+border-radius: 2%;
+}
+
+.affix{
+  top: 0;
+  width: 100%;
+
+}
+.small_logo {
+  display: none;
+}
+.affix .small_logo {
+  display: block;
+}
+.affix .big_logo {
+  display: none;
+}
+.affix-force-top{
+  position:absolute !important;
+  top:auto !important;
+  bottom:auto !important;
+}

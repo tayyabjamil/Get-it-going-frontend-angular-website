@@ -11,6 +11,12 @@ import { CreateAccountComponent } from './createAccount/createAccount.component'
 import { ForgetPasswordComponent } from './forgetPassword/forgetPassword.component';
 import { StartProjectComponent } from './startProject/startProject.component';
 import { CartComponent } from './cart/cart.component';
+import { ProjectDetailsComponent } from './projectDetails/projectDetails.component';
+import { CampaignStoryComponent } from './campaignStory/campaignStory.component';
+import { UpdatesComponent } from './updates/updates.component';
+import { BackerListComponent } from './backerList/backerList.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
    declarations: [
@@ -20,14 +26,19 @@ import { CartComponent } from './cart/cart.component';
       CreateAccountComponent,
       ForgetPasswordComponent,
       StartProjectComponent,
-      CartComponent
+      CartComponent,
+      ProjectDetailsComponent,
+      CampaignStoryComponent,
+      UpdatesComponent,
+      BackerListComponent,
+      ReviewsComponent,
+      CommentComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule,
-
+      FormsModule
    ],
    providers: [],
    bootstrap: [
