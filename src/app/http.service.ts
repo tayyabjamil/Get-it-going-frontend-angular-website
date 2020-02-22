@@ -13,24 +13,7 @@ httpHeaders = {
     accept: ' application/json'
   })
 }
-createAccount(accountData){
-  return this.http.post('http://localhost:3000/project',
-  {
-    username: accountData.username,
-    email: accountData.email,
-    password: accountData.password,
-  },  this.httpHeaders);
-}
 
-startProject(projectData){
-  return this.http.post('http://localhost:3000/project',
-  {
-    title: projectData.title,
-    type: projectData.type,
-    estimateAmount: projectData.estimateAmount,
-    description: projectData.description
-  },  this.httpHeaders);
-}
 createuserAccount(newUser) {
   return this.http.post('http://localhost:3000/userAccount',
       {
@@ -40,11 +23,6 @@ createuserAccount(newUser) {
        },  this.httpHeaders);
   }
 
-getProject(){
-
-  return this.http.get('http://localhost:3000/project');
-
-   }
    login(user) {
     return this.http.post( 'http://localhost:3000/userAccount/login',
      {
@@ -52,4 +30,25 @@ getProject(){
       password: user.password,
      }, this.httpHeaders);
    }
+
+   getCampaign() {
+  return this.http.get('http://localhost:3000/startCampaign');
+
+}
+startCampaign(campaignData) {
+  return this.http.post('http://localhost:3000/startCampaign',
+      {
+        title: campaignData.title,
+        tagline: campaignData.tagline,
+        price: campaignData.price,
+       description: campaignData.description
+      },  this.httpHeaders);
   }
+campaignImage(formData){
+  return this.http.post('http://localhost:3000/campaignImage', formData)
+  }
+  campaignVedio(formData){
+    return this.http.post('http://localhost:3000/campaignVedio', formData)
+    }
+}
+

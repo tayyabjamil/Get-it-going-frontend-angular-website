@@ -11,19 +11,19 @@ export class HomeComponent implements OnInit {
 
   constructor(private httpService: HttpService,private router: Router) { }
 title = "name";
-projectData ;
+campaignData ;
   ngOnInit() {
-    this.getProject();
+    this.getCampaign();
   }
 
-  getProject() {
-    this.httpService.getProject().subscribe(data => {
-  this.projectData = data;
+  getCampaign() {
+    this.httpService.getCampaign().subscribe(data => {
+  this.campaignData = data;
     })
 }
-projectDetails(){
+campaignDetails(){
 
-  this.router.navigate(['projectDetails']);
+  this.router.navigate(['campaignDetails']);
 
 }
 }

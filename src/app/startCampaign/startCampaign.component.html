@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 style="text-align: center;">Genral Information</h1>
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <form >
+                <h3>Campaign Title</h3>
+                <h4>What is the title of your campaign?</h4>
+                <input   [(ngModel)] ='title' type="text" name="title" class="form-control">
+                <h3>Campaign Tagline</h3>
+                <h4>provide a short description that best describe your campaign  to your audience</h4>
+                <input   [(ngModel)] ='tagline' type="text" name="tagline" class="form-control">
+                <!-- <h3>Vedio Url</h3>
+                <h4>Enter a youtube Url to appear at the top of your campaign page</h4> -->
+                <h3>Campaign main image</h3>
+                <h4>provide an image that best describe your campaign  to your audience</h4>
+
+            <div class="form-group">
+                  <label for="myFileField">Select a file: </label>
+                  <input type="file" name="imagePath" [(ngModel)] ='imagePath'  (change)="selectImage($event)"   class="form-control" />
+                  <button type="submit"  (click)='uploadimgFile()' class = "btn btn-primary">upload Campaign Image </button>
+
+                </div>
+                <h3>Campaign Advertising vedio</h3>
+                <h4>provide a short vedio that best describe your campaign  to your audience</h4>
+
+                <div class="form-group">
+                  <label for="myFileField">Select a file: </label>
+                  <input type="file" name="vedioPath" [(ngModel)] ='imagePath'  (change)="selectVedio($event)"   class="form-control" />
+                  <button type="submit"  (click)='uploadvedioFile()' class = "btn btn-primary">upload Campaign Vedio </button>
+
+                </div>
+
+              <h3>Estimate Amount</h3>
+              <h4>provide a minimunAmount that you need to start a Campaign</h4>
+              <input   [(ngModel)] ='amount' type="text" name="amount" class="form-control">
+              <h3>Description</h3>
+              <h4>Provide details of your campaign</h4>
+              <input   [(ngModel)] ='description' type="text" name="description" class="form-control">
+
+              <button type="submit"  (click)='startCampaign()' class = "btn btn-primary">start Campaign </button>
+          </form>
+      </div>
+  </div>
+  <!-- <div>{{serverResponse}}</div>
+   <form action="/upload" method="POST">
+    <input type="file" >
+  </form> -->
+
+    <!-- <angular-file-uploader
+      [config]="afuConfig">
+  </angular-file-uploader> -->
+
+</div>
+

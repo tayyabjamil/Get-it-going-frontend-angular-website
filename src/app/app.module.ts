@@ -9,14 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateAccountComponent } from './createAccount/createAccount.component';
 import { ForgetPasswordComponent } from './forgetPassword/forgetPassword.component';
-import { StartProjectComponent } from './startProject/startProject.component';
 import { CartComponent } from './cart/cart.component';
-import { ProjectDetailsComponent } from './projectDetails/projectDetails.component';
 import { CampaignStoryComponent } from './campaignStory/campaignStory.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { BackerListComponent } from './backerList/backerList.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CommentComponent } from './comment/comment.component';
+import { ProfileComponent } from './Profile/Profile.component';
+import { CampaignDetailsComponent } from './campaignDetails/campaignDetails.component';
+import { StartCampaignComponent } from './startCampaign/startCampaign.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
    declarations: [
@@ -25,20 +27,22 @@ import { CommentComponent } from './comment/comment.component';
       LoginComponent,
       CreateAccountComponent,
       ForgetPasswordComponent,
-      StartProjectComponent,
       CartComponent,
-      ProjectDetailsComponent,
       CampaignStoryComponent,
       UpdatesComponent,
       BackerListComponent,
       ReviewsComponent,
-      CommentComponent
+      CommentComponent,
+      ProfileComponent,
+      CampaignDetailsComponent,
+      StartCampaignComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      AngularFileUploaderModule,
    ],
    providers: [],
    bootstrap: [
