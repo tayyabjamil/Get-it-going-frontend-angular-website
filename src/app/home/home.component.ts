@@ -8,18 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  campaignimageData: Object;
 
   constructor(private httpService: HttpService,private router: Router) { }
 title = "name";
 campaignData ;
   ngOnInit() {
     this.getCampaign();
+this.campaignImage();
   }
 
   getCampaign() {
     this.httpService.getCampaign().subscribe(data => {
   this.campaignData = data;
     })
+}
+campaignImage() {
+  this.httpService.getcampaignImage().subscribe(data => {
+this.campaignimageData = data;
+  })
 }
 campaignDetails(){
 

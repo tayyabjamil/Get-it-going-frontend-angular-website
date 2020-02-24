@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-campaignDetails',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./campaignDetails.component.css']
 })
 export class CampaignDetailsComponent implements OnInit {
-
-  constructor() { }
+campaignimageData;
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+this.campaignImage();
   }
 
+  campaignImage() {
+    this.httpService.getcampaignImage().subscribe(data => {
+  this.campaignimageData = data;
+    });
+  }
 }

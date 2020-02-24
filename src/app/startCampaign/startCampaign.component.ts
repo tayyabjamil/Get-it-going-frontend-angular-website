@@ -30,8 +30,9 @@ export class StartCampaignComponent implements OnInit {
     amount: this.amount,
     description: this.description,
 
-    // imagePath: this.imagePath.append('file', this.images)
+    //  imagePath: this.imagePath.append('file', this.images)
     };
+
     this.httpService.startCampaign(campaignData).subscribe( campaignData => {
       alert('Campaign posted');
       console.log(campaignData);
@@ -51,7 +52,7 @@ selectVedio(event) {
 }
 uploadimgFile() {
   const formData = new FormData();
-  formData.append('file', this.images);
+  formData.append('campaignImage', this.images);
   this.httpService.campaignImage(formData).subscribe( formData => {
     console.log(formData);
     alert('img uploaded');
@@ -60,7 +61,7 @@ uploadimgFile() {
 }
 uploadvedioFile() {
   const formData = new FormData();
-  formData.append('file', this.vediourl);
+  formData.append('campaignVedio', this.vediourl);
   this.httpService.campaignVedio(formData).subscribe( formData => {
     console.log(formData);
     alert('vedio uploaded');

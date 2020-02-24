@@ -35,12 +35,17 @@ createuserAccount(newUser) {
   return this.http.get('http://localhost:3000/startCampaign');
 
 }
+getcampaignImage() {
+  return this.http.get('http://localhost:3000/campaignImage');
+
+}
+
 startCampaign(campaignData) {
   return this.http.post('http://localhost:3000/startCampaign',
       {
         title: campaignData.title,
         tagline: campaignData.tagline,
-        price: campaignData.price,
+        amount: campaignData.amount,
        description: campaignData.description
       },  this.httpHeaders);
   }
@@ -50,5 +55,6 @@ campaignImage(formData){
   campaignVedio(formData){
     return this.http.post('http://localhost:3000/campaignVedio', formData)
     }
-}
+
+  }
 
