@@ -7,16 +7,26 @@ import { HttpService } from '../http.service';
   styleUrls: ['./campaignDetails.component.css']
 })
 export class CampaignDetailsComponent implements OnInit {
-campaignimageData;
-  constructor(private httpService: HttpService) { }
+campaign;
+images;
+stories;
+updates;
+vedio;
+backers;
+constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-this.campaignImage();
+this.campaignData();
   }
 
-  campaignImage() {
-    this.httpService.getcampaignImage().subscribe(data => {
-  this.campaignimageData = data;
-    });
+  campaignData() {
+    this.httpService.getCampaign().subscribe(data => {
+  this.campaign = data[0];
+  this.images  =  this.campaign.campaignImages;
+  this.updates = this.campaign.campaignUpdates;
+  this.stories = this.campaign.campaignStories;
+  this.vedio   = this.campaign.campaignVedios;
+  this.backers  = this.campaign.campaignBackers;
+});
   }
 }

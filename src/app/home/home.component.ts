@@ -13,21 +13,22 @@ export class HomeComponent implements OnInit {
   constructor(private httpService: HttpService,private router: Router) { }
 title = "name";
 campaignData ;
+data;
   ngOnInit() {
     this.getCampaign();
-this.campaignImage();
+    //  this.campaignImage();
   }
 
   getCampaign() {
-    this.httpService.getCampaign().subscribe(data => {
-  this.campaignData = data;
-    })
-}
-campaignImage() {
-  this.httpService.getcampaignImage().subscribe(data => {
-this.campaignimageData = data;
+    this.httpService.getCampaign().subscribe(dataCampaign => {
+  this.campaignData = dataCampaign;
   })
 }
+// campaignImage() {
+//   this.httpService.getcampaignImage().subscribe(data => {
+// this.campaignimageData = data;
+//   })
+// }
 campaignDetails(){
 
   this.router.navigate(['campaignDetails']);
