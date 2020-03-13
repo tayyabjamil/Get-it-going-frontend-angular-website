@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'bakersList', component: BackerListComponent},
   { path: 'comment', component: CommentComponent},
   { path: 'updates', component: UpdatesComponent},
-  { path: 'story', component: CampaignStoryComponent},
+  { path: 'campaignStory', component: CampaignStoryComponent},
   { path: 'reviews', component: ReviewsComponent},
   { path: 'profile', component: ProfileComponent}
 

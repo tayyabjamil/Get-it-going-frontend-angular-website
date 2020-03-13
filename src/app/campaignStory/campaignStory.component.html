@@ -1,8 +1,8 @@
-<div style="background-color: bisque;" class="myrow">
-<p>
-  campaignStory works!
-</p>
-<div >
-{{details}}
-</div>
+<div class="form-group" style="margin: 5%;  ">
+
+  <label>Upload  image</label>
+  <input [(ngModel)] ='image'  class="form-control"  type="file" name="image">
+  <label >Details</label><br>
+  <input [(ngModel)] ='details'  class="form-control" type="text" name="details">
+  <input  type="submit" value="upload Story" (click)='uploadStory()'>
 </div>

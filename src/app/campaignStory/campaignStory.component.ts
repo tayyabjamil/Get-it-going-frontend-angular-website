@@ -10,15 +10,25 @@ export class CampaignStoryComponent implements OnInit {
 campaign;
   constructor(private httpService: HttpService) { }
   ngOnInit() {
-    this.campaignData();
+    // this.campaignData();
       }
 details;
-      campaignData() {
-        this.httpService.getCampaign().subscribe(data => {
-      this.campaign = data[0];
-      this.details = this.campaign.campaignStories[0].details
+image;
+uploadStory() {
+  const newStory = {
+    image: this.image,
+    details : this.details
+  }
+  this.httpService.createStory(newStory).subscribe(newStory => {
+  alert('Story Uploaded');
+  });
+}
+    //   campaignData() {
+    //     this.httpService.getCampaign().subscribe(data => {
+    //   this.campaign = data[0];
+    //   this.details = this.campaign.campaignStories[0].details
 
-    });
-      }
+    // });
+    //   }
     }
 

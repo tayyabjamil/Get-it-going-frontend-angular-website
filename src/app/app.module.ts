@@ -19,6 +19,8 @@ import { ProfileComponent } from './Profile/Profile.component';
 import { CampaignDetailsComponent } from './campaignDetails/campaignDetails.component';
 import { StartCampaignComponent } from './startCampaign/startCampaign.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+import { CampaignReviewComponent } from './campaignReview/campaignReview.component';
+import { CampaignRewardComponent } from './campaignReward/campaignReward.component';
 
 @NgModule({
    declarations: [
@@ -36,13 +38,15 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
       ProfileComponent,
       CampaignDetailsComponent,
       StartCampaignComponent,
+      CampaignReviewComponent,
+      CampaignRewardComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      AngularFileUploaderModule,
+      AngularFileUploaderModule
    ],
    providers: [],
    bootstrap: [

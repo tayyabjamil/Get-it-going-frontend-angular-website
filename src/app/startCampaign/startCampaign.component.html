@@ -1,9 +1,13 @@
 <div class="container">
   <h1 style="text-align: center;">Genral Information</h1>
-    <div class="panel panel-default">
-      <div class="panel-body">
-          <form >
-                <h3>Campaign Title</h3>
+
+
+
+        <form >
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+          <h3>Campaign Title</h3>
                 <h4>What is the title of your campaign?</h4>
                 <input   [(ngModel)] ='title' type="text" name="title" class="form-control">
                 <h3>Campaign Tagline</h3>
@@ -15,20 +19,22 @@
                 <h4>provide an image that best describe your campaign  to your audience</h4>
 
             <div class="form-group">
-                  <label for="myFileField">Select a file: </label>
-                  <input type="file" name="imagePath" [(ngModel)] ='imagePath'  (change)="selectImage($event)"   class="form-control" />
-                  <button type="submit"  (click)='uploadimgFile()' class = "btn btn-primary">upload Campaign Image </button>
+                  <!-- <label for="myFileField">Select a file: </label> -->
+
+                  <input style="float: left;width: 50%;" type="file" name="imagePath" [(ngModel)] ='imagePath'  (change)="selectImage($event)"   class="form-control" />
+                  <button style="float: right;" type="submit"  (click)='uploadimgFile()' class = "btn btn-primary">upload Campaign Image </button>
 
                 </div>
+                <br>
                 <h3>Campaign Advertising vedio</h3>
                 <h4>provide a short vedio that best describe your campaign  to your audience</h4>
 
                 <div class="form-group">
-                  <label for="myFileField">Select a file: </label>
-                  <input type="file" name="vedioPath" [(ngModel)] ='imagePath'  (change)="selectVedio($event)"   class="form-control" />
-                  <button type="submit"  (click)='uploadvedioFile()' class = "btn btn-primary">upload Campaign Vedio </button>
+                  <!-- <label for="myFileField">Select a file: </label> -->
+                  <input style="float: left;width: 50%;" type="file" name="vedioPath" [(ngModel)] ='imagePath'  (change)="selectVedio($event)"   class="form-control" />
+                  <button style="float: right;" type="submit"  (click)='uploadvedioFile()' class = "btn btn-primary">upload Campaign Vedio </button>
 
-                </div>
+                </div><br>
 
               <h3>Estimate Amount</h3>
               <h4>provide a minimunAmount that you need to start a Campaign</h4>
@@ -37,18 +43,32 @@
               <h4>Provide details of your campaign</h4>
               <input   [(ngModel)] ='description' type="text" name="description" class="form-control">
 
-              <button type="submit"  (click)='startCampaign()' class = "btn btn-primary">start Campaign </button>
-          </form>
-      </div>
-  </div>
-  <!-- <div>{{serverResponse}}</div>
-   <form action="/upload" method="POST">
-    <input type="file" >
-  </form> -->
+          </div>
+          </div>
+          <h1 style="text-align: center;">Campaign Reward</h1>
+          <div class="panel panel-default">
+            <div class="panel-body">
 
-    <!-- <angular-file-uploader
-      [config]="afuConfig">
-  </angular-file-uploader> -->
+                <h3>Pledge Amount</h3>
+                <h4>Give the appropriate amount that attract every investor</h4>
+                <input   [(ngModel)] ='pledge' type="text" name="pledge" class="form-control">
+                <div class="form-group" style="margin-top:1% ;">
+                  <h3 >Image for Reward </h3>
+                  <h4>Select an image of Reward</h4>
+                  <input  style="float: left;width: 50%;" type="file" name="imagePath" [(ngModel)] ='imagePath'  (change)="selectImage($event)" class="form-control" />
+                  <button style="float: right;" type="submit"  (click)='uploadimgFile()' class = "btn btn-primary">upload Reward Image </button>
+           <br>
+                  <h3>Reward </h3>
+                  <h4>Give the details about the reward</h4>
+                  <input   [(ngModel)] ='reward' type="text" name="reward" class="form-control">
 
-</div>
+                </div>
+
+              </div>
+          </div>
+          <button type="submit"  (click)='startCampaign()' class = "btn btn-primary">start Campaign </button>
+
+        </form>
+          </div>
+
 

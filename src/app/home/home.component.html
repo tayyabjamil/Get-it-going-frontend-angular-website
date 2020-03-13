@@ -39,10 +39,12 @@
   <div style="text-align: center;font-size: x-large; margin: 5%;">
     Discover campaigns
   </div>
+
   <div class="row" style="margin-bottom: 5%;">
+
     <div class="card col-lg-4 list-group-item">
-     <div *ngFor="let data of campaignimageData">
-      <img [src]= "data.filename" >
+     <div >
+      <img src= "../assets/images/contact.jpg"   style="height: 300px;width: 100%;"class="responsive">
     </div>
       <div class="card-body" *ngFor="let data of campaignData">
         <h3>{{data.title}}</h3>
@@ -63,8 +65,9 @@
     </div>
 
     <div class="card col-lg-4 list-group-item ">
-      <div *ngFor="let data of campaignimageData">
-        <img [src]= "data.filename" >
+
+      <div  >
+        <img style="height: 300px;width: 100%;" src= "../assets/images/ioskit.jpg" class="responsive">
       </div>
 
 
@@ -90,8 +93,8 @@
     </div>
 
     <div class="card col-lg-4 list-group-item " >
-      <div *ngFor="let data of campaignimageData">
-        <img [src]= "data.filename" >
+      <div >
+        <img src= "../assets/images/shoes1.jpg"  class="responsive" style="height: 300px;width: 100%;" >
       </div>
 
 
@@ -113,13 +116,14 @@
       </div>
 
     </div>
-    <div style="text-align: center; margin-top: 5%;" >
-      <button class="btn btn-info">Discover all</button>
-    </div>
+    <div style="text-align: center;">
+    <button class="btn btn-info" style="margin: 5%">Discover all</button>
+  </div>
    </div>
+
   </div>
 
-  <div class="row" style="height: 400px;background-color: rgb(194, 191, 191);text-align: center;">
+  <div class="row" style="height: 400px;background-color: rgb(194, 191, 191);text-align: center; margin-top: 2%;">
    <div style="font-size: larger;margin: 5%;">
      <h3>Home</h3>
      <h3>Discover</h3>

@@ -17,10 +17,13 @@ export class StartCampaignComponent implements OnInit {
   tagline: string;
   amount: string;
   vediourl: string;
+  pledge: string;
+  rewardImage: string;
   campaignImage: string;
   campaignData;
   images;
   imagePath;
+  reward;
   ngOnInit() {
   }
   startCampaign() {
@@ -29,7 +32,8 @@ export class StartCampaignComponent implements OnInit {
     tagline : this.tagline,
     amount: this.amount,
     description: this.description,
-
+    pledge: this.pledge,
+    reward: this.reward
     //  imagePath: this.imagePath.append('file', this.images)
     };
 

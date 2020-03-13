@@ -37,7 +37,6 @@ createuserAccount(newUser) {
 }
 getcampaignImage() {
   return this.http.get('http://localhost:3000/campaignImage');
-
 }
 
 
@@ -50,6 +49,13 @@ startCampaign(campaignData) {
        description: campaignData.description
       },  this.httpHeaders);
   }
+  createStory(storyData) {
+    return this.http.post('http://localhost:3000/campaignStory',
+        {
+          image: storyData.image,
+         details: storyData.details
+        },  this.httpHeaders);
+    }
 campaignImage(formData){
   return this.http.post('http://localhost:3000/campaignImage', formData)
   }
