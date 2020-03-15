@@ -21,6 +21,8 @@ import { StartCampaignComponent } from './startCampaign/startCampaign.component'
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { CampaignReviewComponent } from './campaignReview/campaignReview.component';
 import { CampaignRewardComponent } from './campaignReward/campaignReward.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
    declarations: [
@@ -48,7 +50,7 @@ import { CampaignRewardComponent } from './campaignReward/campaignReward.compone
       FormsModule,
       AngularFileUploaderModule
    ],
-   providers: [],
+   providers: [AuthService, AuthGuard],
    bootstrap: [
       AppComponent
    ]

@@ -14,6 +14,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './Profile/Profile.component';
 import { CampaignDetailsComponent } from './campaignDetails/campaignDetails.component';
 import { StartCampaignComponent } from './startCampaign/startCampaign.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'forgetPassword', component: ForgetPasswordComponent },
   { path: 'startCampaign', component: StartCampaignComponent },
   { path: 'cart', component: CartComponent},
-  { path: 'campaignDetails', component: CampaignDetailsComponent},
+  { path: 'campaignDetails', component: CampaignDetailsComponent, canActivate: [AuthGuard]},
   { path: 'bakersList', component: BackerListComponent},
   { path: 'comment', component: CommentComponent},
   { path: 'updates', component: UpdatesComponent},

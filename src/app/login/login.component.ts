@@ -24,10 +24,18 @@ login(){
     email : this.email,
     password : this.password
    }
-  this.httpService.login(userAccount).subscribe(result => {
+  this.httpService.login(userAccount).subscribe((res: any) => {
 
-this.router.navigate(['home']);
-alert("login succesfully");
-})
+
+
+    this.router.navigate(['home']);
+    alert('login succesfully');
+    this.setToken(res.token);
+  })
 }
+
+setToken(token) {
+  localStorage.setItem('token', JSON.stringify(token));
+}
+
 }

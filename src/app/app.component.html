@@ -17,8 +17,10 @@
       <li><a routerLink="/cart">Cart</a></li>
       <li><a routerLink="/profile">Profile</a></li>
 
-      <li><a routerLink="/createAccount"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a *ngIf="!authService.loggedIn()" routerLink="/reateAccount"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a *ngIf="!authService.loggedIn()" routerLink="lLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a *ngIf="authService.loggedIn()" routerLink="/logout" (click)="authService.loggedOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+
     </ul>
   </div>
 </nav>
