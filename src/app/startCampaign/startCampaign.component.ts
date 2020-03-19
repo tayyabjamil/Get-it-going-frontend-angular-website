@@ -32,8 +32,8 @@ export class StartCampaignComponent implements OnInit {
     tagline : this.tagline,
     amount: this.amount,
     description: this.description,
-    pledge: this.pledge,
-    reward: this.reward
+    // pledge: this.pledge,
+    // reward: this.reward
     //  imagePath: this.imagePath.append('file', this.images)
     };
 

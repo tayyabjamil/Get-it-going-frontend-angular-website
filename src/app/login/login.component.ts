@@ -13,29 +13,27 @@ export class LoginComponent implements OnInit {
   confirmPassword;
   accountData;
 
-  ngOnInit() {
+  ngOnInit() {}
+  constructor(private httpService: HttpService, private router: Router) {}
 
+  login() {
+    const userAccount = {
+      email: this.email,
+      password: this.password
+    };
+    this.httpService.login(userAccount).subscribe((res: any) => {
+      this.router.navigate(['home']);
+      alert('login succesfully');
+      this.setToken(res.token);
+      this.setId(res.userId);
+    });
   }
-  constructor(private httpService: HttpService, private router: Router) { }
 
-login(){
-  const userAccount = {
+  setToken(token) {
+    localStorage.setItem('token', JSON.stringify(token));
+  }
 
-    email : this.email,
-    password : this.password
-   }
-  this.httpService.login(userAccount).subscribe((res: any) => {
-
-
-
-    this.router.navigate(['home']);
-    alert('login succesfully');
-    this.setToken(res.token);
-  })
-}
-
-setToken(token) {
-  localStorage.setItem('token', JSON.stringify(token));
-}
-
+  setId(userId) {
+    localStorage.setItem('userId', JSON.stringify(userId));
+  }
 }

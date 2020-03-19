@@ -12,14 +12,14 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="/home">Home</a></li>
       <li><a routerLink="/startCampaign">Start a Campaign</a></li>
-      <li><a routerLink="/campaignStory">Upload Story</a></li>
+
 
       <li><a routerLink="/cart">Cart</a></li>
       <li><a routerLink="/profile">Profile</a></li>
 
-      <li><a *ngIf="!authService.loggedIn()" routerLink="/reateAccount"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a *ngIf="!authService.loggedIn()" routerLink="lLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li><a *ngIf="authService.loggedIn()" routerLink="/logout" (click)="authService.loggedOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a *ngIf="! authService.loggedIn()" routerLink="/createAccount"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a *ngIf="! authService.loggedIn()" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a *ngIf=" authService.loggedIn()" routerLink="/logout" (click)=" authService.loggedOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 
     </ul>
   </div>

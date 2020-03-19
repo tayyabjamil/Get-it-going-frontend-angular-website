@@ -25,8 +25,9 @@
  </div>
  <div class="col-lg-4" >
  <h4 style="margin-top: 5%;">Technology</h4>
- <h2 style="margin-top: 5%;"> Feature Packed and Affordable e-Bike</h2>
- <h5 style="margin-top: 5%;">Feature Packed and Affordable e-Bike has only one purpose and is used for transporting you from A to B with ease.</h5>
+ <h2 style="margin-top: 5%;"> {{data.campaign.title}}</h2>
+ <h5 style="margin-top: 5%;">{{tagline}}</h5>
+ <h5 style="margin-top: 5%;">{{description}}</h5>
  <div class="row" style="margin-top: 20%;">
  <div class="col-lg-4">10 Backers</div>
  <div class="col-lg-4">4 Likes</div>
@@ -61,8 +62,9 @@
      <ul class="nav navbar-nav navbar-left">
        <li><a routerLink="/story">Campaign Story</a></li>
        <li><a routerLink="/updates">Updates</a></li>
+       <li><a routerLink="/campaignStory">Upload Story</a></li>
        <li><a routerLink="/backersList">Backer List</a></li>
-       <li><a routerLink="/reviews">Reviews</a></li>
+       <li><a routerLink="/reviews">Upload Reviews</a></li>
        <li><a routerLink="/comment">Comment</a></li>
      </ul>
    </div>
@@ -111,7 +113,7 @@
 
     </div>
     <div >
-      {{stories[0].details}}
+      <!-- {{stories.details}} -->
     </div>
     <div class="row">
       <div class="col-lg-2">
@@ -126,7 +128,7 @@
 
 </div>
 <div class="col-lg-4"  style="float: right;border: 1px; border-style: groove;background-color: gainsboro;">
-<h3 style=" "><strong>Reviews</strong></h3>
+<h3><strong>Reviews</strong></h3>
   <div>
   <div class="row">
   <img class="col-lg-2" style="height: 40px;margin: 1%;" width="40px" src="../assets/images/user.png" alt="">

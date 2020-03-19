@@ -23,6 +23,7 @@ import { CampaignReviewComponent } from './campaignReview/campaignReview.compone
 import { CampaignRewardComponent } from './campaignReward/campaignReward.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { MyProjectsComponent } from './myProjects/myProjects.component';
 
 @NgModule({
    declarations: [
@@ -41,7 +42,8 @@ import { AuthGuard } from './auth.guard';
       CampaignDetailsComponent,
       StartCampaignComponent,
       CampaignReviewComponent,
-      CampaignRewardComponent
+      CampaignRewardComponent,
+      MyProjectsComponent
    ],
    imports: [
       BrowserModule,
@@ -50,7 +52,10 @@ import { AuthGuard } from './auth.guard';
       FormsModule,
       AngularFileUploaderModule
    ],
-   providers: [AuthService, AuthGuard],
+   providers: [
+      AuthService,
+      AuthGuard
+   ],
    bootstrap: [
       AppComponent
    ]
