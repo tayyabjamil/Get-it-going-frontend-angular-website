@@ -25,7 +25,7 @@ token;
     };
     // tslint:disable-next-line: no-unused-expression
     this.httpService.createuserAccount(newAccount) .subscribe((res: any) => {
-      this.setToken(res.token);
+      // this.setToken(res.token);
       alert('account created');
     });
   }

@@ -15,32 +15,37 @@ export class HttpService {
   };
 
   getUserData() {
-    return this.http.get('http://localhost:3000/userAccount/' +
-    this.authService.getID());
+    return this.http.get('http://localhost:3000/startCampaign/' + this.authService.getID(),this.httpHeaders);
+
   }
   getAllCampaigns() {
-    return this.http.get('http://localhost:3000/startCampaign');
+    return this.http.get('http://localhost:3000/startCampaign/');
   }
 
   getCampaignDetails(id) {
-    return this.http.get('http://localhost:3000/startCampaign/' + id);
+    return this.http.get('http://localhost:3000/startCampaign/' + id,   this.httpHeaders);
   }
 
   startCampaign(campaignData) {
     return this.http.post(
-      'http://localhost:3000/userAccount/' + this.authService.getID() + '/startcampaigns',
+      'http://localhost:3000/startCampaign'  ,
       {
         title: campaignData.title,
         tagline: campaignData.tagline,
         amount: campaignData.amount,
-        description: campaignData.description
+        description: campaignData.description,
+        pledgeAmount: campaignData.pledgeAmount,
+        rewardDetails: campaignData.rewardDetails,
+        userAccountId: campaignData.userAccountId,
+        mainImage: campaignData.mainImage,
+        // rewardImage: campaignData.rewardImage
       },
       this.httpHeaders
     );
   }
   createuserAccount(newUser) {
     return this.http.post(
-      'http://localhost:3000/userAccount',
+      'http://localhost:3000/userAccount/createAccount',
       {
         username: newUser.username,
         email: newUser.email,
@@ -67,9 +72,19 @@ export class HttpService {
   }
 
 
+  createReview(reviewData) {
+    return this.http.post(
+      'http://localhost:3000/startCampaign/' + reviewData.reviewId + '/campaignReview',
+      {
+        name: reviewData.name,
+        details: reviewData.details
+      },
+      this.httpHeaders
+    );
+  }
   createStory(storyData) {
     return this.http.post(
-      'http://localhost:3000/campaignStory',
+      'http://localhost:3000/startCampaign/' + storyData.storyId + '/campaignStory',
       {
         image: storyData.image,
         details: storyData.details
@@ -78,7 +93,7 @@ export class HttpService {
     );
   }
   campaignImage(formData) {
-    return this.http.post('http://localhost:3000/campaignImage', formData);
+    return this.http.post('http://localhost:3000/campaignImage/upload', formData);
   }
   campaignVedio(formData) {
     return this.http.post('http://localhost:3000/campaignVedio', formData);

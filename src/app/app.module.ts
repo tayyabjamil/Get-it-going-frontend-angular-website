@@ -13,7 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { CampaignStoryComponent } from './campaignStory/campaignStory.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { BackerListComponent } from './backerList/backerList.component';
-import { ReviewsComponent } from './reviews/reviews.component';
+
 import { CommentComponent } from './comment/comment.component';
 import { ProfileComponent } from './Profile/Profile.component';
 import { CampaignDetailsComponent } from './campaignDetails/campaignDetails.component';
@@ -36,14 +36,14 @@ import { MyProjectsComponent } from './myProjects/myProjects.component';
       CampaignStoryComponent,
       UpdatesComponent,
       BackerListComponent,
-      ReviewsComponent,
       CommentComponent,
       ProfileComponent,
       CampaignDetailsComponent,
       StartCampaignComponent,
       CampaignReviewComponent,
       CampaignRewardComponent,
-      MyProjectsComponent
+      MyProjectsComponent,
+      CampaignReviewComponent
    ],
    imports: [
       BrowserModule,

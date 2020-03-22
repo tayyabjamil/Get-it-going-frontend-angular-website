@@ -1,0 +1,9 @@
+<div class="form-group" style="margin: 5%;">
+
+  <label >Name</label><br>
+  <input [(ngModel)] ='name'  class="form-control" type="text" name="name">
+  <label >Review</label><br>
+  <input [(ngModel)] ='details'  class="form-control" type="text" name="details">
+
+  <input  type="submit" value="Post Review" (click)='uploadReview(reviewId)'>
+</div>

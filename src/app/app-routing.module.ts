@@ -10,12 +10,13 @@ import { BackerListComponent } from './backerList/backerList.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { CommentComponent } from './comment/comment.component';
 import { CampaignStoryComponent } from './campaignStory/campaignStory.component';
-import { ReviewsComponent } from './reviews/reviews.component';
+
 import { ProfileComponent } from './Profile/Profile.component';
 import { CampaignDetailsComponent } from './campaignDetails/campaignDetails.component';
 import { StartCampaignComponent } from './startCampaign/startCampaign.component';
 import { AuthGuard } from './auth.guard';
 import { MyProjectsComponent } from './myProjects/myProjects.component';
+import { CampaignReviewComponent } from './campaignReview/campaignReview.component';
 
 
 const routes: Routes = [
@@ -31,8 +32,8 @@ const routes: Routes = [
   { path: 'bakersList', component: BackerListComponent},
   { path: 'comment', component: CommentComponent},
   { path: 'updates', component: UpdatesComponent},
-  { path: 'campaignStory', component: CampaignStoryComponent},
-  { path: 'reviews', component: ReviewsComponent},
+  { path: 'campaignStory/:id', component: CampaignStoryComponent},
+  { path: 'campaignReview/:id', component: CampaignReviewComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'myProjects', component: MyProjectsComponent}
 

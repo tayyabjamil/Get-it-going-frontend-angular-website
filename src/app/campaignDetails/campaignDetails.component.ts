@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -9,33 +10,35 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./campaignDetails.component.css']
 })
 export class CampaignDetailsComponent implements OnInit {
-
+  title;
   images;
   stories;
   updates;
   vedio;
   backers;
   paramsid;
-  title;
+
   tagline;
   description;
   amount;
-campaign;
+  doc;
+// tslint:disable-next-line: ban-types
+campaign: String ;
 data;
-  constructor(private httpService: HttpService , public route: ActivatedRoute) {}
+  constructor(private httpService: HttpService , public route: ActivatedRoute, public router: Router) {}
 
   ngOnInit() {
     const id = (this.route.snapshot.paramMap.get('id'));
     this.paramsid = id;
     this.getCampaignDetails();
-    // tslint:disable-next-line: radix
 
   }
 
   getCampaignDetails() {
     this.httpService.getCampaignDetails(this.paramsid).subscribe(res => {
 
-      this.data = res;
+      this.doc = res;
+      this.data = this.doc.doc ;
       // this.tagline = data.campaign.tagline;
       // this.description = data.campaign.description;
       // this.images  =  data.campaign.campaignImages;
@@ -45,4 +48,12 @@ data;
       // this.backers  = data.campaign.campaignBackers;
     });
   }
+
+  uploadStory() {
+    this.router.navigate(['campaignStory/', this.paramsid]);
+  }
+  uploadReview() {
+    this.router.navigate(['campaignReview/', this.paramsid]);
+  }
+
 }

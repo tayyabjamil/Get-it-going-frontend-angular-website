@@ -51,16 +51,17 @@
 
                 <h3>Pledge Amount</h3>
                 <h4>Give the appropriate amount that attract every investor</h4>
-                <!-- <input   [(ngModel)] ='pledge' type="text" name="pledge" class="form-control"> -->
+                <input   [(ngModel)] ='pledgeAmount' type="text" name="pledgeAmount" class="form-control">
+                <h3>Reward </h3>
+                <h4>Give the details about the reward</h4>
+                <input   [(ngModel)] ='rewardDetails' type="text" name="rewardDetails" class="form-control">
+
                 <div class="form-group" style="margin-top:1% ;">
                   <h3 >Image for Reward </h3>
                   <h4>Select an image of Reward</h4>
-                  <input  style="float: left;width: 50%;" type="file" name="imagePath" [(ngModel)] ='imagePath'  (change)="selectImage($event)" class="form-control" />
+                  <input  style="float: left;width: 50%;" type="file" name="imagePath" [(ngModel)] ='rewardImage'  (change)="selectImage($event)" class="form-control" />
                   <button style="float: right;" type="submit"  (click)='uploadimgFile()' class = "btn btn-primary">upload Reward Image </button>
-           <br>
-                  <h3>Reward </h3>
-                  <h4>Give the details about the reward</h4>
-                  <!-- <input   [(ngModel)] ='reward' type="text" name="reward" class="form-control"> -->
+                 <br>
 
                 </div>
 

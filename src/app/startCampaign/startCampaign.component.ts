@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { AuthService } from '../auth.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-startCampaign',
@@ -7,8 +10,10 @@ import { HttpService } from '../http.service';
   styleUrls: ['./startCampaign.component.css']
 })
 export class StartCampaignComponent implements OnInit {
+  userid: any;
+  id: any;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private auth: AuthService,private router:Router) { }
   title: any;
   type: any;
   estimateAmount: any;
@@ -17,46 +22,58 @@ export class StartCampaignComponent implements OnInit {
   tagline: string;
   amount: string;
   vediourl: string;
-  pledge: string;
+  pledgeAmount: string;
   rewardImage: string;
   campaignImage: string;
   campaignData;
   images;
   imagePath;
-  reward;
+  rewardDetails;
+  mainImage;
+  userId;
   ngOnInit() {
+
+     this.userId = this.auth.getID();
   }
+
   startCampaign() {
     const campaignData = {
     title : this.title,
     tagline : this.tagline,
     amount: this.amount,
     description: this.description,
-    // pledge: this.pledge,
-    // reward: this.reward
-    //  imagePath: this.imagePath.append('file', this.images)
+    pledgeAmount: this.pledgeAmount,
+    rewardDetails: this.rewardDetails,
+    userAccountId: this.userId,
+    mainImage: this.images.name,
     };
 
     this.httpService.startCampaign(campaignData).subscribe( campaignData => {
       alert('Campaign posted');
-      console.log(campaignData);
+      this.router.navigate(['/home']);
   });
   }
   selectImage(event) {
-    if(event.target.files.length > 0){
+    if (event.target.files.length > 0) {
     const file = event.target.files[0];
     this.images = file;
     }
 }
+selectMultipleImage(event) {
+  if (event.target.files.length > 0) {
+  const file = event.target.files;
+  this.images = file;
+  }
+}
 selectVedio(event) {
-  if(event.target.files.length > 0){
+  if (event.target.files.length > 0) {
   const file = event.target.files[0];
   this.vediourl = file;
   }
 }
 uploadimgFile() {
   const formData = new FormData();
-  formData.append('campaignImage', this.images);
+  formData.append('mainImage', this.images);
   this.httpService.campaignImage(formData).subscribe( formData => {
     console.log(formData);
     alert('img uploaded');

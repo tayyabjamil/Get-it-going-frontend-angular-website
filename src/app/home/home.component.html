@@ -41,7 +41,7 @@
       <h2 style="text-align: center;">MY Campaigns</h2>
 
         <div class="containerflex"  >
-          <div class="item" *ngFor="let item of campaigns" >
+          <div class="item" *ngFor="let item of data" >
             <img src="../assets/images/contact.jpg" style="height: 250px;width: 300px;"  (click)="campaignDetails(item._id)"class="responsive">
             <h4 style="text-align: center;" (click)="campaignDetails(item._id)">{{item.title}}</h4>
 
@@ -86,6 +86,8 @@
             </div>
 
             <h4>{{data.title}}</h4>
+            <h5>{{data.tagline}}</h5>
+
             <h5>{{data.type}}</h5>
             <div  class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
@@ -95,7 +97,6 @@
             </div>
             <h5>{{data.amount}}</h5>
 
-            <h5>{{data.description}}</h5>
             <div class="card-footer" style="text-align: center; margin: 5%;">
               <button (click)="campaignDetails(data._id)" class="btn btn-primary">Back campaign</button>
             </div>
